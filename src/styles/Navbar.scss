@@ -1,0 +1,320 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+$hamburger-padding-x: 0px !default;
+$hamburger-padding-y: 0px !default;
+$hamburger-layer-width: 28px !default;
+$hamburger-layer-height: 3px !default;
+$hamburger-layer-spacing: 6px !default;
+$hamburger-layer-color: rgba(185, 186, 188, 1) !default;
+$hamburger-layer-border-radius: 4px !default;
+
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  width: 100%;
+  height: 50px;
+
+  button {
+    cursor: pointer;
+  }
+
+  .nav-logo {
+    margin: 8px 8px;
+    .logo {
+      width: 112px;
+      height: 24px;
+    }
+  }
+
+  .navbar-icon {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0 8px;
+
+    .overlay-menu {
+      @include backDropFilter(2px);
+      background-color: rgba(0, 0, 0, 1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      @extend %scale-up-ver-top-animation;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 200px;
+      z-index: 999;
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        .menu-link {
+          width: 100%;
+          .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 100%;
+
+            a {
+              text-decoration: none;
+              color: $text-color;
+
+              &.active {
+                color: white;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .nav-icon {
+      margin: 12px;
+
+      & .toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 12px;
+        padding-bottom: 3px;
+
+        .toggle-switch {
+          width: 22px;
+          height: 11px;
+          top: 1px;
+        }
+
+        .toggle-switch:before {
+          width: 14px;
+          height: 14px;
+          top: -1.5px;
+          left: -1px;
+        }
+
+        .toggle-checkbox:checked + .toggle-switch:before {
+          left: 11px;
+        }
+
+        .toggle-label {
+          display: none;
+        }
+      }
+
+      .navbar-btn {
+        border: none;
+        width: 8px;
+        height: 20px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+
+        svg {
+          height: 17px;
+          width: 17px;
+          color: $text-color;
+        }
+
+        img {
+          height: 22px;
+          width: 22px;
+
+          &.helmet-icon-img {
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hamburger-inner::after {
+    bottom: -12px;
+  }
+  .hamburger-inner::before {
+    top: -12px;
+  }
+
+  .hamburger-box {
+    width: 36px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    width: 36px;
+    height: 4px;
+  }
+
+  .navbar {
+    width: 100%;
+    height: 80px;
+
+    .nav-logo {
+      margin: 8px 16px;
+      .logo {
+        width: 188px;
+        height: 40px;
+      }
+    }
+
+    .navbar-icon {
+      width: 100%;
+      margin: 0 8px;
+
+      .overlay-menu {
+        top: 80px;
+        height: 220px;
+
+        nav {
+          .menu-link {
+            width: 100%;
+            .menu-item {
+              height: 50px;
+              width: 100%;
+              a {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+
+      .nav-icon {
+        margin: 12px;
+
+        & .toggle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 12px;
+          padding-bottom: 3px;
+
+          .toggle-switch {
+            width: 35px;
+            height: 16px;
+            top: 1px;
+          }
+          .toggle-switch:before {
+            width: 20px;
+            height: 20px;
+            top: -1.5px;
+            left: -1px;
+          }
+          .toggle-checkbox:checked + .toggle-switch:before {
+            left: 16px;
+          }
+        }
+
+        .navbar-btn {
+          width: 30px;
+          height: 30px;
+
+          svg {
+            height: 20px;
+            width: 20px;
+          }
+
+          img {
+            height: 30px;
+            width: 30px;
+
+            &.helmet-icon-img {
+              height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    $size-logo: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    width: 100%;
+    height: 90px;
+
+    button {
+      cursor: pointer;
+    }
+
+    .nav-logo {
+      margin: 8px 24px;
+      .logo {
+        width: $size-logo;
+        height: 52px;
+      }
+    }
+
+    .menu-desktop {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0px calc(24px + $size-logo) 0px 24px;
+      width: 100%;
+      height: 100%;
+      list-style: none;
+
+      a {
+        text-align: center;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        margin: 0 8px;
+
+        display: inline-block;
+        padding: 15px 20px;
+        position: relative;
+
+        &.active {
+          font-weight: 600;
+        }
+
+        &:after {
+          bottom: 0;
+          content: "";
+          display: block;
+          height: 1px;
+          left: 50%;
+          position: absolute;
+          background: #fff;
+          transition: width 0.5s ease 0s, left 0.5s ease 0s;
+          width: 0;
+        }
+
+        &:hover:after {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+}

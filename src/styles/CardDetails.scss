@@ -1,0 +1,116 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+$font-size-category: 0.9rem;
+$font-size-card-name: calc($font-size-category + 0.6rem);
+$font-size-card-flavor: $font-size-category;
+
+.card-details {
+  color: white;
+  line-height: 1.3rem;
+  letter-spacing: 1px;
+
+  & > * {
+    font-family: "Roboto", sans-serif;
+  }
+
+  & .card-name {
+    font-weight: 900;
+    font-size: $font-size-card-name;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  & .card-flavor {
+    font-family: $font-2;
+    color: $text-color-overlay;
+    font-size: $font-size-card-flavor;
+    text-transform: uppercase;
+  }
+
+  & .card-property {
+    display: flex;
+    margin: 8px 0;
+    font-size: $font-size-category;
+
+    & .property-title {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    & > :last-child {
+      font-weight: 200;
+      margin-left: 8px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  $font-size-category: 0.8rem;
+
+  .card-details {
+    width: 100%;
+    & .card-name {
+      font-size: calc($font-size-category + 1rem);
+      margin: 24px 0;
+    }
+
+    & .card-flavor {
+      font-size: calc($font-size-category + 0.6rem);
+      margin: 24px 0;
+      width: 100%;
+    }
+
+    & .card-property {
+      display: flex;
+      margin: 24px 0;
+      font-size: calc($font-size-category + 0.6rem);
+    }
+  }
+}
+
+@media screen and (max-height: 700px) and (max-width: 285px) {
+  $font-size-category: 0.8rem;
+
+  .card-details {
+    & .card-name {
+      font-size: calc($font-size-category + 0.4rem);
+      margin: 8px 0;
+    }
+
+    & .card-flavor {
+      font-size: calc($font-size-category);
+      margin: 8px 0;
+    }
+
+    & .card-property {
+      display: flex;
+      margin: 4px 0;
+      font-size: calc($font-size-category);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  $font-size-category: 0.8rem;
+
+  .card-details {
+    & .card-name {
+      font-size: calc($font-size-category + 1rem);
+      margin: 24px 0;
+    }
+
+    & .card-flavor {
+      font-size: calc($font-size-category + 0.6rem);
+      margin: 24px 0;
+    }
+
+    & .card-property {
+      display: flex;
+      margin: 24px 0;
+      font-size: calc($font-size-category + 0.6rem);
+    }
+  }
+}

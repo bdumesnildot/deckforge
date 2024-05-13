@@ -1,0 +1,51 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.searchbar-flex-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  @media screen and (min-width: 1024px) {
+    width: 280px;
+  }
+
+  .searchBar-container {
+    @extend %transition-base;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 5px;
+    font-family: $font-1;
+    color: $border-color;
+    &:hover {
+      color: $primary-color;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 100%;
+    }
+
+    .searchBar-icon {
+      position: absolute;
+      height: 50%;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .input-searchBar {
+      @extend %input-base;
+      @extend %transition-base;
+      width: 100%;
+      &:hover {
+        border: 1px solid $primary-color;
+      }
+      &:focus {
+        border: 1px solid $primary-color;
+        color: $primary-color;
+      }
+    }
+  }
+}

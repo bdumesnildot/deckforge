@@ -1,0 +1,95 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.btn-dropdown-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  margin: 8px 0px;
+  width: 80%;
+
+  .dropdown-options-container {
+    @extend %scale-up-ver-top-animation;
+    border: 1px solid #292929;
+    border-radius: 5px;
+    position: absolute;
+    max-height: 25vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 36px;
+    left: 0;
+    z-index: 1;
+    scrollbar-width: thin;
+    scrollbar-color: #292929 #000000;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #000000;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #292929;
+      border-radius: 4px;
+      border: 0px none #000000;
+    }
+  }
+}
+.btn {
+  @extend %btn-base;
+}
+
+.btn-dropdown {
+  @extend %btn-base;
+  height: 36px;
+  width: 100%;
+  justify-content: space-between;
+
+  &:hover,
+  &:focus {
+    color: $primary-color;
+    .btn-dropdown-text,
+    .svg-inline--fa.fa-caret-down path {
+      @extend %transition-base;
+      color: $primary-color;
+    }
+  }
+
+  .rotateIcon {
+    transform: rotate(180deg);
+  }
+}
+
+.btn-dropdown-text {
+  width: 95%;
+  padding-right: 15px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 768px) {
+  .btn-dropdown-container {
+    width: 45%;
+    margin: 8px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .btn-dropdown-container {
+    width: 15%;
+    .dropdown-options-container {
+      top: 36px;
+    }
+    .btn-dropdown {
+      height: 36px;
+    }
+  }
+}

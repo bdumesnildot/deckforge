@@ -1,0 +1,149 @@
+@import "./_variables.scss";
+
+%flexDisplayCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexColumnEnd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+%btn-base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  border: 1px solid $border-color;
+  background-color: $black-color;
+  color: $text-color;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: $font-1;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  -webkit-border-radius: 0.2s color ease-in-out;
+  -moz-border-radius: 0.2s color ease-in-out;
+  -ms-border-radius: 0.2s color ease-in-out;
+  -o-border-radius: 0.2s color ease-in-out;
+  cursor: pointer;
+  @extend %hover-base;
+  @extend %focus-base;
+  @extend %transition-base;
+
+  &.active {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+}
+
+%input-base {
+  appearance: none;
+  outline: none;
+
+  height: 36px;
+  border: 1px solid $border-color;
+  background-color: transparent;
+  color: $text-color;
+  font-size: 14px;
+  letter-spacing: 1.25px;
+  padding: 8px 24px;
+  border-radius: 4px;
+  -webkit-border-radius: 0.2s color ease-in-out;
+  -moz-border-radius: 0.2s color ease-in-out;
+  -ms-border-radius: 0.2s color ease-in-out;
+  -o-border-radius: 0.2s color ease-in-out;
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+%hover-base {
+  &:hover {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+}
+
+%focus-base {
+  &:focus {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+}
+
+%transition-base {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+%scale-up-ver-top-animation {
+  -webkit-animation: scale-up-ver-top 0.15s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-ver-top 0.15s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  @-webkit-keyframes scale-up-ver-top {
+    0% {
+      -webkit-transform: scaleY(0.15);
+      transform: scaleY(0.15);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+  }
+  @keyframes scale-up-ver-top {
+    0% {
+      -webkit-transform: scaleY(0.15);
+      transform: scaleY(0.15);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+  }
+}
+
+%btn-utils {
+  @extend %flexDisplayCenter;
+  width: 40px;
+  height: 40px;
+  right: 112px;
+  display: flex;
+
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      background: $primary-color;
+      border-color: $secondary-color;
+      color: $background-color;
+    }
+
+    &:active {
+      background: lighten($background-color, 20%);
+      color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+}

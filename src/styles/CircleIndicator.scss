@@ -1,0 +1,55 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.circleIndicator {
+  @extend %flexDisplayCenter;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 7px;
+
+  .counter {
+    font-size: 15px;
+    @media screen and (min-width: 769px) {
+      font-size: 20px;
+    }
+  }
+
+  .progressBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .cost {
+      font-size: 15px;
+      position: absolute;
+      @media screen and (min-width: 769px) {
+        font-size: 20px;
+      }
+    }
+
+    svg {
+      height: 35px;
+      width: 35px;
+      @media screen and (min-width: 769px) {
+        height: 50px;
+        width: 50px;
+      }
+
+      circle {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 1s linear;
+        stroke: #666;
+        stroke-width: 1em;
+      }
+
+      circle.bar {
+        stroke: $primary-color;
+        transform: rotate(-90deg);
+        transform-origin: center;
+      }
+    }
+  }
+}

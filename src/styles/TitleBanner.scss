@@ -1,0 +1,44 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.titleBanner {
+  .titleContainer {
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (min-width: 768px) {
+      height: 80px;
+    }
+
+    img {
+      position: absolute;
+      height: 100%;
+      right: 0;
+      left: 0;
+      margin: auto;
+      padding: 0 10px;
+      background-color: $background-primary;
+    }
+
+    h1 {
+      position: absolute;
+      text-align: center;
+      font-size: 0.6em;
+      text-transform: uppercase;
+      font-family: $font-1;
+      color: $border-color;
+      @media screen and (min-width: 768px) {
+        font-size: 1em;
+      }
+    }
+
+    .line {
+      width: 90%;
+      border-bottom: solid 1px $border-color;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.wrapper-card {
+  $height: 500px;
+  $font-size-arrow: 70px;
+  position: relative;
+  margin: 0px 0;
+  width: 100%;
+  height: $height;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    margin: 32px 0px;
+  }
+
+  @media (min-width: 1024px) {
+    margin: 8px 0px;
+  }
+
+  .card-controller {
+    object-fit: cover;
+    border-radius: 2px;
+    min-width: 200px !important;
+    max-width: 180px;
+    width: 80%;
+
+    position: relative;
+    right: -4px;
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      max-width: 200px;
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 220px;
+    }
+  }
+
+  .slick-slider {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .slick-list {
+    position: relative;
+    display: block !important;
+    overflow: hidden;
+    padding: 100px !important;
+    width: 100%;
+  }
+  .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+  }
+  .slick-slide div {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slick-slide:not(.slick-active) {
+    position: relative;
+    top: 50px;
+    z-index: 200;
+    opacity: 0.1;
+    transform: scale(0.9);
+    transition: 0.25s ease-in-out;
+
+    @media (min-width: 1024px) {
+      transform: scale(0.7);
+    }
+  }
+  .slick-slide.slick-active:not(.slick-current) {
+    position: relative;
+    z-index: 200;
+    top: 50px;
+    transform: scale(0.9);
+    opacity: 0.1;
+    @media (min-width: 1024px) {
+      transform: scale(0.7);
+    }
+    transition: 0.25s ease-in-out;
+  }
+
+  .slick-slide.slick-active.slick-current {
+    position: relative;
+    z-index: 300;
+    transform: scale(1.5);
+    transition: 0.25s;
+  }
+
+  .slick-slide.slick-active:not(.slick-current) .image,
+  .slick-slide.slick-active.slick-current .image,
+  .slick-slide:not(.slick-active) .image {
+    width: 100% !important;
+  }
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+
+  .custom-prevArrow,
+  .custom-nextArrow {
+    position: absolute;
+    top: calc((($height - $font-size-arrow) / 2));
+    z-index: 1;
+    font-size: $font-size-arrow;
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.2);
+    margin: 0px 8px;
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      margin: 0 32px;
+      font-size: calc($font-size-arrow * 1.5);
+    }
+
+    @media (min-width: 1024px) {
+      margin: 0 32px;
+      font-size: calc($font-size-arrow * 1);
+    }
+  }
+
+  .custom-prevArrow {
+    left: 0px;
+  }
+
+  .custom-nextArrow {
+    right: 0px;
+  }
+
+  .custom-prevArrow:hover,
+  .custom-nextArrow:hover {
+    cursor: pointer;
+  }
+
+  .button-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+
+    .btn-fancy {
+      margin: 0 16px;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.hero-selection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .hero-list-container {
+    @extend %flexDisplayCenter;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    margin: 16px auto;
+    height: 75vh;
+    @media screen and (min-width: 1024px) {
+      height: auto;
+    }
+    .hero-panel {
+      height: 300px;
+      width: auto;
+      margin: 20px;
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        height: auto;
+        width: 25vw;
+      }
+      @media screen and (min-width: 1024px) {
+        height: auto;
+        width: 13vw;
+      }
+      .hero-btn,
+      .hero-image {
+        border: none;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        background-color: $background-primary;
+        color: $primary-color;
+      }
+    }
+
+    .hero-btn {
+      border: none;
+    }
+    .hero-btn {
+      cursor: pointer;
+    }
+  }
+
+  .text-heroSelection {
+    @extend %flexDisplayCenter;
+    margin: 16px auto;
+  }
+  .btn-import-deck {
+    margin: 16px auto;
+  }
+}

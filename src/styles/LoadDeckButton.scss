@@ -1,0 +1,27 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.load-form {
+  display: flex;
+  justify-content: center;
+
+  .load-input {
+    background-color: $background-primary;
+    color: $primary-color;
+    width: 200px;
+    margin-right: 16px;
+    &:focus {
+      cursor: text;
+    }
+    &:hover {
+      cursor: text;
+    }
+  }
+}
+
+.load-input,
+.btn-load-deck {
+  @extend %btn-base;
+}

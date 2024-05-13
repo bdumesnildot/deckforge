@@ -1,0 +1,60 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.btn-heroes-container {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  @media (max-width: 320px) {
+    width: 100%;
+  }
+  .btn-heroes-items {
+    @extend %scale-up-ver-top-animation;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    z-index: 20;
+    min-width: 100%;
+    .btn-heroes {
+      border-radius: 0px;
+      border: 1px solid $black-color;
+      background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(255, 255, 255, 1) 50%
+      );
+      &:first-child {
+        border-radius: 4px 4px 0px 0px;
+      }
+      &:last-child {
+        border-radius: 0px 0px 4px 4px;
+      }
+    }
+  }
+}
+.btn {
+  @extend %btn-base;
+}
+
+.btn-heroes {
+  @extend %btn-base;
+  justify-content: space-between;
+  background-position: center;
+  background-size: 105%;
+  &:hover,
+  &:focus {
+    background-size: 110%;
+    color: $primary-color;
+    .hero-name,
+    .svg-inline--fa.fa-caret-down path {
+      @extend %transition-base;
+      color: $primary-color;
+    }
+  }
+
+  .rotateIcon {
+    transform: rotate(180deg);
+  }
+}

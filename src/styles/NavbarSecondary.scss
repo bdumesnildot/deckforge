@@ -1,0 +1,89 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.navbar-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $background-primary;
+  height: 72px;
+  width: 100%;
+
+  & .navbar-side-left,
+  .navbar-center,
+  .navbar-side-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: auto;
+  }
+
+  & .navbar-side-left {
+    & > div {
+      width: 250px;
+    }
+  }
+
+  & .navbar-center {
+    & > div {
+      width: 80%;
+    }
+  }
+
+  & .navbar-side-right {
+    justify-content: space-around;
+    & .toggle {
+      color: $text-color;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 230px;
+      padding: 0 16px;
+
+      & .toggle-label {
+        position: initial;
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .navbar-secondary {
+    & .navbar-side-left,
+    .navbar-center,
+    .navbar-side-right {
+      width: 32%;
+    }
+
+    & .navbar-side-left {
+      & > div {
+        width: 220px;
+      }
+    }
+
+    & .navbar-center {
+      & > div {
+        width: 280px;
+      }
+    }
+
+    & .navbar-side-right {
+      & .toggle {
+        width: 200px;
+        padding: 0 0px;
+
+        & .toggle-label {
+          position: initial;
+          display: flex;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.card-controller {
+  position: relative;
+  &:hover {
+    .info {
+      display: flex;
+    }
+  }
+
+  .info {
+    @extend %flexDisplayCenter;
+    @extend %btn-utils;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    top: 5%;
+    right: 3%;
+    opacity: 0.9;
+    height: 34px;
+    width: 34px;
+  }
+}
+
+@media screen and (min-width: 496px) {
+  .card-controller {
+    .info {
+      font-size: 20px;
+      height: 40px;
+      width: 40px;
+      right: 6%;
+      top: 6%;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-controller {
+    .info {
+      position: absolute;
+      display: none;
+    }
+    &:hover {
+      .info {
+        display: flex;
+        &:hover {
+          .fa-info path {
+            color: black;
+            fill: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1472px) {
+  .card-controller {
+    .info {
+      top: 8%;
+      right: 8%;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_placeholders.scss";
+@import "./_buttons.scss";
+
+.deckBuilderPage {
+  height: calc(100vh - 90px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .deckBuilderPage-flex-topContent {
+    width: 100%;
+  }
+
+  .deckBuilderPage-flex-growContent {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+
+    .card-container {
+      position: absolute;
+      padding-bottom: 20px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 100%;
+
+      @media screen and (min-width: 768px) {
+        padding-bottom: 85px;
+      }
+
+      @media screen and (min-width: 1023px) {
+        padding-bottom: 100px;
+      }
+    }
+  }
+
+  .loading-icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 100px auto 100px auto;
+    animation: rotating 5s linear infinite;
+  }
+  @keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .navbar-secondary {
+    position: relative;
+    z-index: 20;
+  }
+
+  .navbar-tertiary {
+    position: relative;
+    top: 0;
+    z-index: 10;
+  }
+
+  .deck-panel {
+    z-index: 30;
+  }
+
+  .tabletMobile-opt-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+
+    .btn-heroes-container {
+      width: 65%;
+      @media screen and (min-width: 768px) {
+        width: 250px;
+      }
+    }
+
+    .searchbar-flex-container {
+      width: 65%;
+      margin: 8px 16px;
+      @media screen and (min-width: 768px) {
+        width: 350px;
+      }
+
+      .searchBar-container {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
