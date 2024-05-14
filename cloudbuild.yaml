@@ -1,13 +1,17 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
   args:
+  - '-c'
+  - 'docker'
   - 'build'
   - '--build-arg'
   - 'VITE_HS_API_KEY=${PROD_HS_API_KEY}'
   - '-t'
   - '${_SERVICE_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}'
   - '.'
+  secretEnv: ['PROD_HS_API_KEY']
 
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
