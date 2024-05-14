@@ -4,7 +4,12 @@ import PropTypes from "prop-types";
 
 function PrevArrow({ onClick }) {
   return (
-    <button type="button" className="custom-prevArrow" onClick={onClick}>
+    <button
+      type="button"
+      label="previousButton"
+      className="custom-prevArrow"
+      onClick={onClick}
+    >
       <FontAwesomeIcon icon={faChevronLeft} />
     </button>
   );

@@ -71,6 +71,7 @@ function Sliders({ cards = [] }) {
           <div
             key={item.cardId}
             role="button"
+            label="button"
             tabIndex={index}
             className={`card-controller ${
               currentSlide === index ? "slick-current" : ""
