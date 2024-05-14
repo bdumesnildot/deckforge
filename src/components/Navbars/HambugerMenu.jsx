@@ -11,6 +11,7 @@ function HambugerMenu({ setActiveMenu, activeMenu }) {
         activeMenu && "is-active"
       }`}
       type="button"
+      label="menuButton"
       onClick={() => handleClick()}
     >
       <span className="hamburger-box">

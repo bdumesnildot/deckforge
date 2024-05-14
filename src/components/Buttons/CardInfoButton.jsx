@@ -6,7 +6,12 @@ import "../../styles/CardInfoButton.scss";
 
 export default function CardInfoButton({ onClick }) {
   return (
-    <button type="button" className="btn info" onClick={onClick}>
+    <button
+      type="button"
+      label="cardInfoButton"
+      className="btn info"
+      onClick={onClick}
+    >
       <FontAwesomeIcon icon={faInfo} />
     </button>
   );

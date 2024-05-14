@@ -11,6 +11,7 @@ function SearchButtonMenu({ activeSearch, setActiveSearch }) {
     <div className="nav-icon">
       <button
         type="button"
+        label="searchButton"
         onClick={() => handleClick()}
         className="navbar-btn"
       >

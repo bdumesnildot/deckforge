@@ -39,6 +39,7 @@ export default function DeckPanelCard() {
           <div className="card-deck" key={item.cardId}>
             <button
               type="button"
+              label="cardButton"
               className="info btn"
               onClick={() => handleClickInfo(item)}
             >
@@ -56,6 +57,7 @@ export default function DeckPanelCard() {
             </div>
             <button
               type="button"
+              label="cardInfoButton"
               className="add btn"
               onClick={() => addUpdateDeck(deck, setDeck, item)}
             >
@@ -63,6 +65,7 @@ export default function DeckPanelCard() {
             </button>
             <button
               type="button"
+              label="cardInfoButton"
               className="remove btn"
               onClick={() => removeQuantityCardToDeck(deck, setDeck, index)}
             >

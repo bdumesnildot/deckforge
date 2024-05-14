@@ -43,6 +43,7 @@ function CardDisplayer({ cards }) {
             }
           }}
           role="button"
+          label="checkQuantityButton"
           tabIndex={index}
           style={{
             filter:
