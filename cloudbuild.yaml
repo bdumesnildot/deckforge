@@ -4,14 +4,14 @@ steps:
   args:
   - 'build'
   - '-t'
-  - '${_SERVICE_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}:$COMMIT_SHA'
+  - '${_SERVICE_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}'
   - '.'
 
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'push'
-  - '${_SERVICE_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}:$COMMIT_SHA'
+  - '${_SERVICE_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}'
 
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -21,12 +21,12 @@ steps:
   - 'deploy'
   - '${_SERVICE_NAME}'
   - '--image'
-  - '${_SERVICE_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}:$COMMIT_SHA'
+  - '${_SERVICE_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}'
   - '--region'
   - '${_SERVICE_REGION}'
 
 images:
-- '${_SERVICE_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}:$COMMIT_SHA'
+- '${_SERVICE_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}'
 
 timeout: 1000s
 
