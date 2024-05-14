@@ -8,6 +8,7 @@ jobs:
   ci:
     name: 'Continuous Integration'
     timeout-minutes: 10
+    runs-on: ubuntu-latest
 
     env:
       VITE_HS_API_KEY: '1234567890-abcd'
